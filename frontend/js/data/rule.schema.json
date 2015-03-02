@@ -1,0 +1,135 @@
+{
+    "type": "array",
+    "title": "Rules",
+    "format": "tabs",
+    "items": {
+        "title": "Rule",
+        "type": "object",
+        "id": "rule",
+        "properties": {
+            "id": {
+                "type": "string",
+                "default": null,
+                "options": {
+                    "hidden": true
+                }  
+            },                
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "minLength": 2,
+                "default": "Rule",
+                "propertyOrder": 1
+            },
+            "event": {
+                "title": "Subscribe to event of type",
+                "type": "string",
+                "propertyOrder": 2
+            },
+            "ruleSettings": {
+                "type": "object",
+                "title": "Settings",
+                "properties": {
+                    "setting": {
+                        "title": "Environment type:",
+                        "type": "string",
+                        "enum": [
+                            "dev", "prod"
+                        ]
+                    }
+                },
+                "propertyOrder": 3
+            },
+            "fieldSets": {
+                "type": "array",
+                "title": "Fieldsets",
+                "items": {
+                    "headerTemplate": "{{self.setName}}",
+                    "type": "object",
+                    "properties": {
+                        "setName": {
+                            "type": "string",
+                            "title": "Name",
+                            "readOnly": true,
+                            "options": {
+                                "hidden": true
+                            }                                
+                        },
+                        "fields": {
+                            "type": "array",
+                            "title": "Fields",
+                            "items": {
+                                "type": "object",
+                                "title": "Field" ,
+                                "properties": {
+                                    "fieldName": {
+                                        "type": "string",
+                                        "title": "Name",
+                                        "propertyOrder": 1
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "title": "Type",
+                                        "enum": [
+                                            "profileAttribute",
+                                            "sessionValue",
+                                            "eventValue",
+                                            "macro",
+                                            "meta",
+                                            "static"
+                                        ],
+                                        "default": "static",
+                                        "options": {
+                                            "enum_titles": [
+                                                "Profile Attribute",
+                                                "Session Data",
+                                                "Event Data",
+                                                "Macro",
+                                                "Meta",
+                                                "Static"
+                                            ]
+                                        },
+                                        "propertyOrder": 2
+                                    },
+                                    "fieldSettings": {
+                                        "type": "string",
+                                        "default": null,
+                                        "options": {
+                                            "hidden": true
+                                        },
+                                        "propertyOrder": 3
+                                    },
+                                    "valueRef": {
+                                        "type": "string",
+                                        "default": null,
+                                        "options": {
+                                            "hidden": true
+                                        },
+                                        "propertyOrder": 4
+                                    },
+                                    "value": {
+                                        "type": "string",
+                                        "title": "Value",
+                                        "propertyOrder": 5
+                                    }
+                                },
+                                "required": ["fieldName", "type"]
+                            }
+                        }
+                    }
+                },
+                "options": {
+                    "disable_array_add": true,
+                    "disable_array_delete": true
+                },
+                "propertyOrder": 4
+            }
+        },
+        "options": {
+            "disable_array_add": true,
+            "disable_array_delete": true                
+        },
+        "required": ["name", "event"],
+        "headerTemplate": "{{i1}}. {{self.name}}"
+    }
+}

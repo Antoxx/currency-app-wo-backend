@@ -1,0 +1,35 @@
+{
+    "id": null,
+    "ruleSettings": {},
+    "fieldSets": [{
+        "setName": "mapping",
+        "fields": [{
+            "fieldSettings": null,
+            "valueRef": null,
+            "value": null,
+            "fieldName": "id"
+        }, {
+            "fieldSettings": null,
+            "valueRef": null,
+            "value": null,
+            "fieldName": "customer_id"
+        }, {
+            "fieldSettings": null,
+            "valueRef": null,
+            "value": null,
+            "fieldName": "riid"
+        }, {
+            "fieldSettings": null,
+            "valueRef": null,
+            "value": null,
+            "fieldName": "email_address"
+        }, {
+            "fieldSettings": null,
+            "valueRef": null,
+            "value": null,
+            "fieldName": "email_deliverability_status"
+        }]
+    }], 
+    "event": "",
+    "name": ""
+}

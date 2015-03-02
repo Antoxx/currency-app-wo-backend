@@ -1,0 +1,14 @@
+{
+    "version_name": "currency-app",
+    "version_description": "",
+    "pages": [{
+        "name": "App Settings",
+        "type": "bundled",
+        "content": "frontend/settings.html"
+    },{
+        "name": "Rules",
+        "type": "bundled",
+        "content": "frontend/rules.html"
+    }],
+    "permissions": ["app.read.own"]
+}
